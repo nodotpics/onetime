@@ -82,7 +82,7 @@ export const ViewPage = () => {
     );
   }
 
-  if (error || !viewInfo?.exists) {
+  if (error || (viewInfo && !viewInfo.exists)) {
     return (
       <div className="text-white h-full flex items-center justify-center max-sm:p-4 max-sm:items-start">
         <div className="max-w-md text-center bg-white text-black p-9 rounded-[28px]">
@@ -101,7 +101,7 @@ export const ViewPage = () => {
       <div className="flex items-center justify-center h-full max-sm:p-4 max-sm:items-start">
         <SharedViewCard
           onView={handleView}
-          isWithPassword={viewInfo.isWithPassword}
+          isWithPassword={viewInfo?.isWithPassword || false}
         />
         {unlocking && <div className="text-slate-400 mt-4">Unlocking...</div>}
       </div>
