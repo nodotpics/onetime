@@ -41,13 +41,15 @@ export const Header = () => {
       <Link to={'/'}>
         <LogoIcon />
       </Link>
-      <div
-        onClick={() => navigate('https://github.com/nodotpics/onetime')}
-        className="flex items-center justify-center gap-2 rounded-full max-w-[167px] w-full py-3 bg-white text-black max-sm:hidden"
+      <a
+        href="https://github.com/nodotpics/onetime"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center justify-center gap-2 rounded-full max-w-[167px] w-full py-3 bg-white text-black max-sm:hidden hover:opacity-90 transition"
       >
         <GithubIcon />
         <span className="font-semibold">Repository</span>
-      </div>
+      </a>
     </header>
   );
 };
