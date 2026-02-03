@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2c9bf38b-602b-49fc-ba2e-c59484fb8a26" name="Changes" comment="feat: privacy policy">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="107" />
+    <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/apps/api" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="MIXED" />
+    <option name="ROOT_SYNC" value="SYNC" />
+  </component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="38WtjgEnaX83sB8M5IAj78DGfIH" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Docker.web/Dockerfile.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Notification.DisplayName-DoNotAsk-grazie.missing.language&quot;: &quot;Proofreader is Missing Languages&quot;,
+    &quot;Notification.DoNotAsk-grazie.missing.language&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;javascript.preferred.runtime.type.id&quot;: &quot;bun&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/user/Desktop/nopictures&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;bun&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/user/Desktop/nopictures/node_modules/prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/user/Desktop/nopictures/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/apps/web/public" />
+      <recent name="$PROJECT_DIR$/apps/web/src/widgets" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="web/Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="contextFolderPath" value="$PROJECT_DIR$" />
+          <option name="sourceFilePath" value="apps/web/Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Docker.web/Dockerfile" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-WS-253.30387.83" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2c9bf38b-602b-49fc-ba2e-c59484fb8a26" name="Changes" comment="" />
+      <created>1768927292478</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1768927292478</updated>
+      <workItem from="1768927293906" duration="6156000" />
+      <workItem from="1769464142258" duration="1218000" />
+      <workItem from="1769617623507" duration="6179000" />
+      <workItem from="1769632735170" duration="30606000" />
+      <workItem from="1769815210143" duration="12235000" />
+      <workItem from="1769885551167" duration="36177000" />
+      <workItem from="1770122814095" duration="9294000" />
+    </task>
+    <task id="LOCAL-00001" summary="bootstrap: base system version">
+      <option name="closed" value="true" />
+      <created>1769810983224</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1769810983225</updated>
+    </task>
+    <task id="LOCAL-00002" summary="refactor(api): remove unused endpoints">
+      <option name="closed" value="true" />
+      <created>1769815288184</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1769815288184</updated>
+    </task>
+    <task id="LOCAL-00003" summary="efactor(web): keep FSD structure clean">
+      <option name="closed" value="true" />
+      <created>1769871716012</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1769871716012</updated>
+    </task>
+    <task id="LOCAL-00004" summary="chore(ui): update create &amp; preview pages to match new design">
+      <option name="closed" value="true" />
+      <created>1769900850137</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1769900850137</updated>
+    </task>
+    <task id="LOCAL-00005" summary="feat: add docker-compose setup">
+      <option name="closed" value="true" />
+      <created>1769961199136</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1769961199136</updated>
+    </task>
+    <task id="LOCAL-00006" summary="chore(repo): restructure folders">
+      <option name="closed" value="true" />
+      <created>1769971827891</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1769971827891</updated>
+    </task>
+    <task id="LOCAL-00007" summary="feat(preview): add not viewed/viewed/expired states">
+      <option name="closed" value="true" />
+      <created>1769974064503</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1769974064503</updated>
+    </task>
+    <task id="LOCAL-00008" summary="fix: cors">
+      <option name="closed" value="true" />
+      <created>1770040485393</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1770040485393</updated>
+    </task>
+    <task id="LOCAL-00009" summary="fix: disable CORS">
+      <option name="closed" value="true" />
+      <created>1770043003283</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1770043003283</updated>
+    </task>
+    <task id="LOCAL-00010" summary="feat: add mobile layouts for upload/preview/view">
+      <option name="closed" value="true" />
+      <created>1770048822786</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1770048822786</updated>
+    </task>
+    <task id="LOCAL-00011" summary="fix: enable page scroll on mobile">
+      <option name="closed" value="true" />
+      <created>1770049623091</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1770049623091</updated>
+    </task>
+    <task id="LOCAL-00012" summary="feat: add favicons and update header links">
+      <option name="closed" value="true" />
+      <created>1770056822581</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1770056822581</updated>
+    </task>
+    <task id="LOCAL-00013" summary="feat: add favicons">
+      <option name="closed" value="true" />
+      <created>1770058492689</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1770058492689</updated>
+    </task>
+    <task id="LOCAL-00014" summary="feat: add burn secret logic and update OG image">
+      <option name="closed" value="true" />
+      <created>1770117980120</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1770117980120</updated>
+    </task>
+    <task id="LOCAL-00015" summary="feat: add passphrase unlock for viewing photos">
+      <option name="closed" value="true" />
+      <created>1770125848360</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1770125848360</updated>
+    </task>
+    <task id="LOCAL-00016" summary="chore(branding): update logo">
+      <option name="closed" value="true" />
+      <created>1770126465199</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1770126465199</updated>
+    </task>
+    <task id="LOCAL-00017" summary="chore: remove .idea">
+      <option name="closed" value="true" />
+      <created>1770127886070</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1770127886070</updated>
+    </task>
+    <task id="LOCAL-00018" summary="feat(api): add CORS configuration">
+      <option name="closed" value="true" />
+      <created>1770132116718</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1770132116718</updated>
+    </task>
+    <task id="LOCAL-00019" summary="chore: update readme and add MIT license">
+      <option name="closed" value="true" />
+      <created>1770132945520</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1770132945520</updated>
+    </task>
+    <task id="LOCAL-00020" summary="feat: privacy policy">
+      <option name="closed" value="true" />
+      <created>1770133745516</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1770133745516</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="SHOW_ROOT_NAMES" value="true" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/apps/api" />
+    </ignored-roots>
+    <MESSAGE value="initial commit" />
+    <MESSAGE value="bootstrap: base system version" />
+    <MESSAGE value="chore: remove unused api endpoints" />
+    <MESSAGE value="refactor(api): remove unused endpoints" />
+    <MESSAGE value="efactor(web): keep FSD structure clean" />
+    <MESSAGE value="chore(ui): update create &amp; preview pages to match new design" />
+    <MESSAGE value="feat: add docker-compose setup" />
+    <MESSAGE value="chore(repo): restructure folders" />
+    <MESSAGE value="feat(preview): add not viewed/viewed/expired states" />
+    <MESSAGE value="fix: cors" />
+    <MESSAGE value="fix: disable CORS" />
+    <MESSAGE value="feat: add mobile layouts for upload/preview/view" />
+    <MESSAGE value="fix: enable page scroll on mobile" />
+    <MESSAGE value="feat: add favicons and update header links" />
+    <MESSAGE value="feat: add favicons" />
+    <MESSAGE value="feat: add burn secret logic and update OG image" />
+    <MESSAGE value="feat: add passphrase unlock for viewing photos" />
+    <MESSAGE value="chore(branding): update logo" />
+    <MESSAGE value="chore: remove .idea" />
+    <MESSAGE value="feat(api): add CORS configuration" />
+    <MESSAGE value="chore: update readme and add MIT license" />
+    <MESSAGE value="feat: privacy policy" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: privacy policy" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/apps/api/src/photos/photos.service.ts</url>
+          <line>138</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

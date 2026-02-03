@@ -1,0 +1,30 @@
+{
+  "name": "nopictures",
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "check-types": "turbo run check-types"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^11.0.16",
+    "eslint": "^9.39.2",
+    "prettier": "^3.8.0",
+    "turbo": "^2.7.5",
+    "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "packageManager": "bun@1.2.18",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "dependencies": {
+    "@tanstack/react-query": "^5.90.19",
+    "zustand": "^5.0.10"
+  }
+}
