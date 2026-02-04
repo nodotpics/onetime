@@ -11,6 +11,7 @@ import {
   Body,
   Delete,
 } from '@nestjs/common';
+import { Throttle } from '@nestjs/throttler';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { Response } from 'express';
 import { PhotosService } from './photos.service';
@@ -21,18 +22,26 @@ export class PhotosController {
   constructor(private readonly photosService: PhotosService) {}
 
   @Post('upload')
+  @Throttle({ default: { ttl: 60_000, limit: 10 } })
   @UseInterceptors(
     FileInterceptor('photo', {
       limits: { fileSize: PhotoUploadLimits.MAX_FILE_SIZE },
       fileFilter: (req, file, cb) => {
-        if (
-          !PhotoUploadLimits.ALLOWED_MIME_TYPES.includes(file.mimetype as any)
-        ) {
+        const allowed = PhotoUploadLimits.ALLOWED_MIME_TYPES.includes(
+          file.mimetype as (typeof PhotoUploadLimits.ALLOWED_MIME_TYPES)[number],
+        );
+
+        if (!allowed) {
           return cb(
-            new BadRequestException('Only image files are allowed'),
+            new BadRequestException(
+              `Unsupported file type: ${file.mimetype}. Allowed: ${PhotoUploadLimits.ALLOWED_MIME_TYPES.join(
+                ', ',
+              )}`,
+            ),
             false,
           );
         }
+
         cb(null, true);
       },
     }),
@@ -45,16 +54,21 @@ export class PhotosController {
     if (!file) throw new BadRequestException('No file uploaded');
 
     const ttlSeconds = ttl ? Number(ttl) : undefined;
-    if (ttlSeconds && (!Number.isFinite(ttlSeconds) || ttlSeconds % 1 !== 0)) {
-      throw new BadRequestException('ttl must be an integer (seconds)');
+
+    if (ttlSeconds !== undefined) {
+      if (!Number.isFinite(ttlSeconds) || !Number.isInteger(ttlSeconds)) {
+        throw new BadRequestException('ttl must be an integer (seconds)');
+      }
+
+      if (ttlSeconds < PhotoTTL.MIN || ttlSeconds > PhotoTTL.MAX) {
+        throw new BadRequestException(
+          `TTL must be between ${PhotoTTL.MIN} and ${PhotoTTL.MAX} seconds`,
+        );
+      }
     }
-    if (
-      ttlSeconds &&
-      (ttlSeconds < PhotoTTL.MIN || ttlSeconds > PhotoTTL.MAX)
-    ) {
-      throw new BadRequestException(
-        `TTL must be between ${PhotoTTL.MIN} and ${PhotoTTL.MAX} seconds`,
-      );
+
+    if (passphrase && passphrase.length > 128) {
+      throw new BadRequestException('passphrase is too long');
     }
 
     const result = await this.photosService.uploadPhoto(
@@ -71,12 +85,14 @@ export class PhotosController {
   }
 
   @Get(':id/status')
+  @Throttle({ default: { ttl: 60_000, limit: 60 } })
   async getStatusById(@Param('id') id: string) {
     const status = await this.photosService.getStatusById(id);
     return { success: true, ...status };
   }
 
   @Post(':id/unlock')
+  @Throttle({ default: { ttl: 60_000, limit: 8 } })
   async unlock(
     @Param('id') id: string,
     @Body('passphrase') passphrase?: string,
@@ -86,12 +102,14 @@ export class PhotosController {
   }
 
   @Get('receipt/:receiptId/status')
+  @Throttle({ default: { ttl: 60_000, limit: 60 } })
   async getStatusByReceipt(@Param('receiptId') receiptId: string) {
     const status = await this.photosService.getStatusByReceipt(receiptId);
     return { success: true, ...status };
   }
 
   @Delete(':id')
+  @Throttle({ default: { ttl: 60_000, limit: 30 } })
   async burnReceipt(@Param('id') receiptId: string) {
     if (!receiptId) return { success: true };
     await this.photosService.burnPhoto(receiptId);
@@ -99,6 +117,7 @@ export class PhotosController {
   }
 
   @Get(':id')
+  @Throttle({ default: { ttl: 60_000, limit: 20 } })
   async getPhoto(
     @Param('id') id: string,
     @Query('token') token: string | undefined,

@@ -22,11 +22,7 @@ export const ViewPage = () => {
   );
 
   useEffect(() => {
-    if (!id) {
-      setError('Invalid photo ID');
-      setLoading(false);
-      return;
-    }
+    if (!id) return
 
     photosApi
       .getStatusById(id)
@@ -39,7 +35,6 @@ export const ViewPage = () => {
         setLoading(false);
       });
   }, [id]);
-
 
   const handleView = wrapUnlock(async (passphrase: string) => {
     if (!id) {
