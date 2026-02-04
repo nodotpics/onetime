@@ -1,4 +1,4 @@
-import { Link, NavLink, useNavigate } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { LogoIcon } from '@/shared/icons/logo_icon';
 import { GithubIcon } from '@/shared/icons/github_icon';
 
@@ -11,11 +11,9 @@ const headerLinks = [
 const isExternal = (href: string) => /^https?:\/\//i.test(href);
 
 export const Header = () => {
-  const navigate = useNavigate();
-
   return (
-    <header className="flex justify-between items-center text-white py-4 px-10 max-sm:pt-10 max-sm:items-center max-sm:justify-center">
-      <div className="flex items-center gap-10 max-sm:hidden">
+    <header className="grid grid-cols-3 items-center text-white py-4 pl-10 pr-4 max-sm:pt-10 max-sm:px-4">
+      <div className="flex items-center gap-10 max-sm:hidden justify-self-start">
         {headerLinks.map(({ label, href }) =>
           isExternal(href) ? (
             <a
@@ -38,18 +36,22 @@ export const Header = () => {
           )
         )}
       </div>
-      <Link to={'/'}>
+
+      <Link to="/" className="justify-self-center">
         <LogoIcon />
       </Link>
-      <a
-        href="https://github.com/nodotpics/onetime"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex items-center justify-center gap-2 rounded-full max-w-[167px] w-full py-3 bg-white text-black max-sm:hidden hover:opacity-90 transition"
-      >
-        <GithubIcon />
-        <span className="font-semibold">Repository</span>
-      </a>
+
+      <div className="flex items-center justify-end w-full">
+        <a
+          href="https://github.com/nodotpics/onetime"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-center gap-2 rounded-full max-w-[167px] w-full py-3 bg-white text-black max-sm:hidden hover:opacity-90 transition"
+        >
+          <GithubIcon />
+          <span className="font-semibold">Repository</span>
+        </a>
+      </div>
     </header>
   );
 };
