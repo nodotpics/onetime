@@ -12,7 +12,7 @@ const isExternal = (href: string) => /^https?:\/\//i.test(href);
 
 export const Header = () => {
   return (
-    <header className="grid grid-cols-3 items-center text-white py-4 pl-10 pr-4 max-sm:pt-10 max-sm:px-4">
+    <header className="grid grid-cols-3 max-sm:flex items-center max-sm:justify-center text-white py-4 pl-10 pr-4 max-sm:pt-10 max-sm:px-4">
       <div className="flex items-center gap-10 max-sm:hidden justify-self-start">
         {headerLinks.map(({ label, href }) =>
           isExternal(href) ? (
@@ -41,7 +41,7 @@ export const Header = () => {
         <LogoIcon />
       </Link>
 
-      <div className="flex items-center justify-end w-full">
+      <div className="flex items-center justify-end w-full max-sm:hidden">
         <a
           href="https://github.com/nodotpics/onetime"
           target="_blank"
