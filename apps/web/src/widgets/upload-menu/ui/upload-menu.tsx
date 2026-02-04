@@ -6,6 +6,7 @@ import { Dropdown, DropdownOption } from '@/shared/ui/dropdown';
 import { formatFileLabel } from '@/shared/lib/formatFileLabel';
 import { FileCard } from '@/shared/ui/file-card';
 import { formatBytes } from '@/shared/lib/formatBytes';
+import { useLoadingButton } from '@/features/hooks/useLoadingButton';
 
 const TTL_OPTIONS: DropdownOption<number>[] = [
   { label: '5 minutes', value: 300 },
@@ -127,6 +128,7 @@ export const UploadMenu: React.FC<{
   onFileSelected?: (file: File) => void;
   onUpload?: (file: File, passphrase: string, ttl: number) => void;
 }> = ({ onFileSelected, onUpload }) => {
+  const { loading, wrap } = useLoadingButton();
   const [passphrase, setPassphrase] = React.useState('');
   const [selectedFile, setSelectedFile] = React.useState<File | null>(null);
   const [ttl, setTtl] = React.useState<number>(3600);
@@ -139,11 +141,10 @@ export const UploadMenu: React.FC<{
     onFileSelected?.(file);
   };
 
-  const handleUpload = () => {
-    if (selectedFile) {
-      onUpload?.(selectedFile, passphrase, ttl);
-    }
-  };
+  const handleUpload = wrap(async () => {
+    if (!selectedFile) return;
+    await onUpload?.(selectedFile, passphrase, ttl);
+  });
 
   const generatePassphrase = () => {
     const chars =
@@ -210,6 +211,7 @@ export const UploadMenu: React.FC<{
           handleUpload();
         }}
         disabled={!selectedFile}
+        loading={loading}
         fullWidth
       >
         Create Link

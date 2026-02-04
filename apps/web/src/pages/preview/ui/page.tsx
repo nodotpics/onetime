@@ -3,8 +3,10 @@ import { useParams } from 'react-router-dom';
 import { photosApi } from '@/entities/photo/api/photosApi';
 import type { PhotoStatusByReceiptResponse } from '@/entities/photo/api/types';
 import { UploadResult } from '@/widgets/upload-result';
+import { useLoadingButton } from '@/features/hooks/useLoadingButton';
 
 export const PreviewPage = () => {
+  const { loading, wrap } = useLoadingButton();
   const { id } = useParams();
   const [previewInfo, setPreviewInfo] =
     useState<PhotoStatusByReceiptResponse | null>(null);
@@ -22,20 +24,18 @@ export const PreviewPage = () => {
       .catch(() => {});
   }, [id]);
 
-  const onClickBurnSecret = async () => {
+  const onClickBurnSecret = wrap(async () => {
     if (!previewInfo?.id) return;
-    try {
-      await photosApi.burnPhoto(previewInfo.id);
-      setPreviewInfo((prev) => (prev ? { ...prev, isExpired: true } : prev));
-    } catch (error) {
-      console.error(error);
-    }
-  };
+
+    await photosApi.burnPhoto(previewInfo.id);
+    setPreviewInfo((prev) => (prev ? { ...prev, isExpired: true } : prev));
+  });
 
   return (
     <div className="flex items-center justify-center h-full max-sm:p-4 max-sm:items-start">
       <UploadResult
         onBurn={onClickBurnSecret}
+        loading={loading}
         link={`${window.location.origin}/view/${previewInfo?.id}`}
         status={
           previewInfo?.isExpired

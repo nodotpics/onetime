@@ -4,6 +4,7 @@ import { EncryptKeyIcon } from '@/shared/icons/encrypt_key_icon';
 import { CopyIcon } from '@/shared/icons/copy_icon';
 import { CheckIcon } from '@/shared/icons/check_icon';
 import { STATUS_UI } from '@/widgets/upload-result/ui/upload-result.status-ui';
+import { clsx } from 'clsx';
 
 type Status = 'not_viewed' | 'viewed' | 'expired';
 
@@ -11,7 +12,8 @@ type EncryptedResultCardProps = {
   link: string;
   status?: Status;
   deleteAfterText?: string;
-  onBurn?: () => void;
+  onBurn: () => void;
+  loading: boolean;
 };
 
 export const UploadResult = ({
@@ -19,6 +21,7 @@ export const UploadResult = ({
   status = 'not_viewed',
   deleteAfterText = 'Will be deleted after 1 view',
   onBurn,
+  loading,
 }: EncryptedResultCardProps) => {
   const [copied, setCopied] = React.useState(false);
 
@@ -66,19 +69,27 @@ export const UploadResult = ({
               {deleteAfterText}
             </span>
           </div>
-          <div className="mt-0.75 flex items-center gap-3 rounded-2xl border border-[#D7DAE3] bg-white px-4 py-3">
+          <div
+            className={clsx(
+              'mt-0.75 flex items-center gap-3 rounded-2xl transition-colors border bg-white px-4 py-3',
+              copied ? 'border-[#06BF5C]' : 'border-[#D7DAE3]'
+            )}
+          >
             <div className="shrink-0 pt-1">
               <EncryptKeyIcon />
             </div>
 
-            <span className="min-w-0 flex-1 break-all underline underline-offset-2 max-sm:text-sm">
+            <span
+              onClick={handleCopy}
+              className="min-w-0 flex-1 break-all underline underline-offset-2 max-sm:text-sm cursor-pointer"
+            >
               {link}
             </span>
 
             <Button
               type="button"
               onClick={handleCopy}
-              className="h-11 w-11 p-3! rounded-xl border border-[#D7DAE3] bg-white transition hover:bg-[#F6F7FA] active:scale-[0.98]"
+              className="h-11 w-11 p-3! rounded-xl border border-[#D7DAE3] bg-white transition hover:bg-[#F6F7FA]"
               aria-label="Copy link"
               title={copied ? 'Copied!' : 'Copy'}
               size="sm"
@@ -107,6 +118,7 @@ export const UploadResult = ({
         <Button
           className={'mt-9 max-sm:mt-3 font-semibold'}
           onClick={onBurn}
+          loading={loading}
           variant="danger"
           fullWidth={true}
         >

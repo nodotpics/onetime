@@ -4,8 +4,10 @@ import { Button } from '@/shared/ui/button';
 import { photosApi } from '@/entities/photo/api/photosApi';
 import { SharedViewCard } from '@/widgets/shared-view-card';
 import type { PhotoStatusByIdResponse } from '@/entities/photo/api/types';
+import { useLoadingButton } from '@/features/hooks/useLoadingButton';
 
 export const ViewPage = () => {
+  const { loading: unlocking, wrap: wrapUnlock } = useLoadingButton();
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
 
@@ -18,7 +20,6 @@ export const ViewPage = () => {
   const [photoUrlWithToken, setPhotoUrlWithToken] = useState<string | null>(
     null
   );
-  const [unlocking, setUnlocking] = useState(false);
 
   useEffect(() => {
     if (!id) {
@@ -39,7 +40,8 @@ export const ViewPage = () => {
       });
   }, [id]);
 
-  const handleView = async (passphrase: string) => {
+
+  const handleView = wrapUnlock(async (passphrase: string) => {
     if (!id) {
       navigate('/');
       return;
@@ -53,18 +55,15 @@ export const ViewPage = () => {
     }
 
     try {
-      setUnlocking(true);
       const info = await photosApi.unlockPhoto(id, passphrase);
-
       setPhotoUrlWithToken(info.photoUrl);
       setViewed(true);
-    } catch (e: unknown) {
+    } catch (e) {
       console.error(e);
+      setError('Wrong passphrase or photo expired');
       setViewed(false);
-    } finally {
-      setUnlocking(false);
     }
-  };
+  });
 
   const photoSrc = viewInfo?.isWithPassword
     ? photosApi.getPhotoUrl(photoUrlWithToken || '')
@@ -102,6 +101,7 @@ export const ViewPage = () => {
         <SharedViewCard
           onView={handleView}
           isWithPassword={viewInfo?.isWithPassword || false}
+          loading={unlocking}
         />
         {unlocking && <div className="text-slate-400 mt-4">Unlocking...</div>}
       </div>

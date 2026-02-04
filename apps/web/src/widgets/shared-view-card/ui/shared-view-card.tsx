@@ -9,6 +9,7 @@ type SharedViewCardProps = {
   onView: (passphrase: string) => void;
   buttonText?: string;
   isWithPassword: boolean;
+  loading: boolean;
 };
 
 export const SharedViewCard = ({
@@ -17,6 +18,7 @@ export const SharedViewCard = ({
   onView,
   buttonText = 'View file',
   isWithPassword,
+  loading,
 }: SharedViewCardProps) => {
   const [passphrase, setPassphrase] = React.useState<string>('');
   return (
@@ -48,6 +50,7 @@ export const SharedViewCard = ({
         <Button
           type="button"
           onClick={() => onView(passphrase)}
+          loading={loading}
           fullWidth
           variant="success"
         >
